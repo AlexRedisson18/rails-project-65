@@ -1,0 +1,24 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+    error_notification:
+      default_message: "Проверьте введенные данные:"
+    labels:
+      defaults:
+        сategory: Категория
+        title: Заголовок
+        description: Описание
+        image: Изображение
+  activerecord:
+    attributes:
+        bulletin:
+          title: Заголовок
+          description: Описание
+          image: Изображение
+          category: Категория
+        category:
+          name: Наименование

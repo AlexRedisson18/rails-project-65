@@ -18,6 +18,10 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
+gem 'active_storage_validations'
+gem 'faker'
+gem 'file_validators'
+gem 'image_processing'
 gem 'rails-i18n'
 gem 'rubocop-rails', require: false
 gem 'sentry-rails'
@@ -40,7 +44,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'faker'
   gem 'minitest-power_assert'
   gem 'selenium-webdriver'
 end

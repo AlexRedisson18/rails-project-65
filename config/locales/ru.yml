@@ -11,3 +11,12 @@ ru:
     signed_in: Успешно
     signed_out: Успешно
     error: Что-то пошло не так
+  bulletins:
+    new:
+      add: Добавить объявление
+      create: Создать объявление
+    index:
+      bulletins: Объявления
+    flash:
+      notice: Объявление было создано
+      alert: Что-то пошло не так

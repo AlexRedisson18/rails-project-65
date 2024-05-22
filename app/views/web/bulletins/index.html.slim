@@ -1,0 +1,6 @@
+.mb-4
+  h2 = t('bulletins.index.bulletins')
+  hr
+
+  .row.mt-2
+    == render partial: 'bulletin', collection: @bulletins

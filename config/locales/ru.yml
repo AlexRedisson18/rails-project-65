@@ -1,0 +1,13 @@
+ru:
+  navbar:
+    bulletin_board: Доска объявлений
+    main_page: Главная
+    my_bulletins: Мои объявления
+    add_bulletin: Добавить
+    admin_panel: Админка
+    sign_in: Войти
+    sign_out: Выйти
+  auth:
+    signed_in: Успешно
+    signed_out: Успешно
+    error: Что-то пошло не так

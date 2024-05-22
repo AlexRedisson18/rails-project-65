@@ -1,0 +1,24 @@
+.container.mb-2
+  .d-flex.flex-wrap.align-items-center.py-2.border-bottom
+    .navbar.navbar-expand-md.navbar-light.me-auto
+      = link_to t('navbar.bulletin_board'), root_path, class: 'navbar-brand me-md-4'
+      #navbarToggler.collapse.navbar-collapse
+        ul.nav.nav-pills.flex-grow-1.navbar-nav.me-auto
+          li.nav-item.me-2
+            = link_to t('navbar.main_page'), root_path, class: 'nav-link text-dark'
+          - if signed_in?
+            li.nav-item.me-2
+              = link_to t('navbar.my_bulletins'), root_path, class: 'nav-link text-dark'
+            li.nav-item.me-2
+              = link_to t('navbar.add_bulletin'), root_path, class: 'nav-link text-dark'
+    ul.nav.nav-pills
+      - if signed_in?
+        li.nav-item.me-2
+          = link_to t('navbar.admin_panel'), root_path, class: 'nav-link text-dark'
+        li.nav-item.me-2
+          = button_to t('navbar.sign_out'), auth_logout_path, method: :delete, class: 'nav-link text-dark'
+      - else
+        li.nav-item.me-2
+          = button_to auth_request_path(:github), data: { turbo: false }, class: 'nav-link text-dark' do
+            span class='bi bi-github me-2'
+            span = t('navbar.sign_in')

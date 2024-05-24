@@ -22,6 +22,7 @@ gem 'active_storage_validations'
 gem 'faker'
 gem 'file_validators'
 gem 'image_processing'
+gem 'pundit'
 gem 'rails-i18n'
 gem 'rubocop-rails', require: false
 gem 'sentry-rails'

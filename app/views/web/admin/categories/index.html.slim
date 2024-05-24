@@ -1,0 +1,13 @@
+h1.h2.mb-4 = t('admin.categories.index.categories')
+
+= link_to t('admin.categories.index.add_category'), new_admin_category_path
+
+.row.mt-2
+  table.table.table-borderless
+    thead
+      tr
+        th = t('admin.categories.index.table.id')
+        th = t('admin.categories.index.table.name')
+        th = t('admin.categories.index.table.actions')
+    tbody
+      == render partial: 'category', collection: @categories

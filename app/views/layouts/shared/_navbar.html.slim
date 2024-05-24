@@ -14,7 +14,7 @@
     ul.nav.nav-pills
       - if signed_in?
         li.nav-item.me-2
-          = link_to t('navbar.admin_panel'), root_path, class: 'nav-link text-dark'
+          = link_to t('navbar.admin_panel'), admin_root_path, class: 'nav-link text-dark'
         li.nav-item.me-2
           = button_to t('navbar.sign_out'), auth_logout_path, method: :delete, class: 'nav-link text-dark'
       - else

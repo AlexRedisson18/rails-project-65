@@ -1,0 +1,11 @@
+h1.h2.mb-4 = t('admin.admin.index.bulletins_on_moderation')
+
+.row.mt-2
+  table.table.table-borderless
+    thead
+      tr
+        th = t('admin.admin.index.table.title')
+        th = t('admin.admin.index.table.creation_date')
+        th = t('admin.admin.index.table.actions')
+    tbody
+      == render partial: 'bulletin', collection: @bulletins

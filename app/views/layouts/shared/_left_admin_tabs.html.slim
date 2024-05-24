@@ -1,0 +1,9 @@
+- common_classes = 'nav-link link-dark'
+- attributes_list = [{ locale_key: t('admin.admin.index.bulletins_on_moderation'), path: admin_root_path },
+                     { locale_key: t('admin.admin.index.all_bulletins'), path: admin_bulletins_path },
+                     { locale_key: t('admin.admin.index.all_categories'), path: admin_categories_path }]
+
+- attributes_list.each do |elem|
+  - classes = current_page?(elem[:path]) ? "#{common_classes} active" : common_classes
+  li.nav-item
+    = link_to elem[:locale_key], elem[:path], class: classes

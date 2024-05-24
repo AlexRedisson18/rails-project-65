@@ -1,0 +1,8 @@
+h1.h2.mb-4
+  = title
+
+= simple_form_for(category, url: path) do |f|
+  .form-inputs
+    = f.input :name
+  .form-actions
+    = f.button :submit, submit_text, class: 'btn btn-primary mt-2'

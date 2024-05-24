@@ -20,3 +20,51 @@ ru:
     flash:
       notice: Объявление было создано
       alert: Что-то пошло не так
+  admin:
+    admin:
+      index:
+        bulletins_on_moderation: Объявления на модерации
+        all_bulletins: Все объявления
+        all_categories: Все категории
+      table:
+        title: Название
+        creation_date: Дата создания
+        actions: Действия
+        publish: Опубликовать
+        refund: Вернуть
+        to_archive: В архив
+      confirm_publish: Подтвердить публикацию
+      confirm_refund: Подтвердить возврат
+      confirm_archive: Подтвердить архивацию
+    bulletins:
+      index:
+        bulletins: Объявления
+        table:
+          title: Название
+          state: Состояние
+          creation_date: Дата создания
+          actions: Действия
+    categories:
+      index:
+        categories: Категории
+        add_category: Добавить категорию
+        table:
+          edit: Редактировать
+          delete: Удалить
+        confirm_delete: Подтвердить удаление
+      create:
+        flash:
+          notice: Категория была успешно создана
+      new:
+        title: Новая категория
+        submit_text: Создать категорию
+      edit:
+        title: Редактировать категорию
+        submit_text: Сохранить категорию
+      update:
+        flash:
+          notice: Категория была успешно изменена
+      destroy:
+        flash:
+          notice: Категория была успешно удалена
+          alert: Не удалось удалить категорию, так как она содержит объявления

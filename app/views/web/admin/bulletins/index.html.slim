@@ -1,0 +1,12 @@
+h1.h2.mb-4 = t('admin.bulletins.index.bulletins')
+
+.row.mt-2
+  table.table.table-borderless
+    thead
+      tr
+        th = t('admin.bulletins.index.table.title')
+        th = t('admin.bulletins.index.table.state')
+        th = t('admin.bulletins.index.table.creation_date')
+        th = t('admin.bulletins.index.table.actions')
+    tbody
+      == render partial: 'bulletin', collection: @bulletins

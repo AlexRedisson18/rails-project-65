@@ -1,0 +1,9 @@
+tr
+  td
+    = link_to bulletin.title, bulletin
+  td
+    = time_ago_in_words(bulletin.updated_at)
+  td
+    = link_to t('admin.admin.table.publish'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_publish') }, class: 'me-1'
+    = link_to t('admin.admin.table.refund'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_refund') }, class: 'me-1'
+    = link_to t('admin.admin.table.to_archive'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_archive') }, class: 'text-danger'

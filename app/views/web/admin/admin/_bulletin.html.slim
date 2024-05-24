@@ -4,6 +4,6 @@ tr
   td
     = time_ago_in_words(bulletin.updated_at)
   td
-    = link_to t('admin.admin.table.publish'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_publish') }, class: 'me-1'
-    = link_to t('admin.admin.table.refund'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_refund') }, class: 'me-1'
-    = link_to t('admin.admin.table.to_archive'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_archive') }, class: 'text-danger'
+    = link_to t('bulletins.table.actions.publish'), publish_admin_bulletin_path(bulletin), data: { turbo_method: :patch, turbo_confirm: t('bulletins.confirm.publish') }, class: 'me-1'
+    = link_to t('bulletins.table.actions.reject'), reject_admin_bulletin_path(bulletin), data: { turbo_method: :patch, turbo_confirm: t('bulletins.confirm.refund') }, class: 'me-1'
+    = link_to t('bulletins.table.actions.archive'), archive_admin_bulletin_path(bulletin), data: { turbo_method: :patch, turbo_confirm: t('bulletins.confirm.archive') }, class: 'text-danger'

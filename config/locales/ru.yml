@@ -11,31 +11,64 @@ ru:
     signed_in: Успешно
     signed_out: Успешно
     error: Что-то пошло не так
+    not_logged_in: Прежде чем продолжить вам необходими войти в систему
+    not_admin: У вас нет прав для просмотра данной страницы
   bulletins:
-    new:
-      add: Добавить объявление
-      create: Создать объявление
+    table:
+      actions:
+        show: Показать
+        edit: Редактировать
+        to_moderate: На модерацию
+        archive: В архив
+        reject: Отклонить
+        publish: Опубликовать
+    states:
+      draft: Черновик
+      under_moderation: На модерации
+      published: Опубликовано
+      rejected: Возвращено
+      archived: В архиве
+    confirm:
+      publish: Подтвердить публикацию
+      refund: Подтвердить возврат
+      archive: Подтвердить архивацию
     index:
-      bulletins: Объявления
-    flash:
-      notice: Объявление было создано
-      alert: Что-то пошло не так
+      title: Объявления
+    new:
+      title: Добавить объявление
+      submit_button_text: Создать объявление
+    create:
+      flash:
+        notice: Объявление было создано
+        alert: Что-то пошло не так
+    edit:
+      title: Редактировать объявление
+      submit_button_text: Сохранить объявление
+    update:
+      flash:
+        notice: Объявление было обновлено
+        alert: Что-то пошло не так
+    to_moderate:
+      flash:
+        notice: Объявление отправлено на модерацию
+        alert: Что-то пошло не так
+    archive:
+      flash:
+        notice: Объявление отправлено в архив
+        alert: Что-то пошло не так
   admin:
     admin:
       index:
         bulletins_on_moderation: Объявления на модерации
         all_bulletins: Все объявления
         all_categories: Все категории
-      table:
-        title: Название
-        creation_date: Дата создания
-        actions: Действия
-        publish: Опубликовать
-        refund: Вернуть
-        to_archive: В архив
-      confirm_publish: Подтвердить публикацию
-      confirm_refund: Подтвердить возврат
-      confirm_archive: Подтвердить архивацию
+        table:
+          title: Название
+          creation_date: Дата создания
+          actions: Действия
+          publish: Опубликовать
+          refund: Вернуть
+          to_archive: В архив
     bulletins:
       index:
         bulletins: Объявления
@@ -44,13 +77,30 @@ ru:
           state: Состояние
           creation_date: Дата создания
           actions: Действия
+      publish:
+        flash:
+          notice: Объявление было успешно опубликовано
+          alert: Не удалось опубликовать объявление
+      reject:
+        flash:
+          notice: Объявление было успешно возвращено
+          alert: Не удалось вернуть объявление
+      archive:
+        flash:
+          notice: Объявление было успешно заархивировано
+          alert: Не удалось заархивировать объявление
     categories:
+      table:
+        actions:
+          edit: Редактировать
+          delete: Удалить
       index:
         categories: Категории
         add_category: Добавить категорию
         table:
-          edit: Редактировать
-          delete: Удалить
+          id: ID
+          name: Название
+          actions: Действия
         confirm_delete: Подтвердить удаление
       create:
         flash:
@@ -68,3 +118,12 @@ ru:
         flash:
           notice: Категория была успешно удалена
           alert: Не удалось удалить категорию, так как она содержит объявления
+  profile:
+    show:
+      my_bulletins: Мои объявления
+      add_bulletin: Добавить объявление
+    table:
+      title: Название
+      state: Состояние
+      creation_date: Дата создания
+      actions: Действия

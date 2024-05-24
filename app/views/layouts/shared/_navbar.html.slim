@@ -8,13 +8,14 @@
             = link_to t('navbar.main_page'), root_path, class: 'nav-link text-dark'
           - if signed_in?
             li.nav-item.me-2
-              = link_to t('navbar.my_bulletins'), root_path, class: 'nav-link text-dark'
+              = link_to t('navbar.my_bulletins'), profile_path, class: 'nav-link text-dark'
             li.nav-item.me-2
               = link_to t('navbar.add_bulletin'), new_bulletin_path, class: 'nav-link text-dark'
     ul.nav.nav-pills
       - if signed_in?
-        li.nav-item.me-2
-          = link_to t('navbar.admin_panel'), admin_root_path, class: 'nav-link text-dark'
+        - if current_user.admin?
+          li.nav-item.me-2
+            = link_to t('navbar.admin_panel'), admin_root_path, class: 'nav-link text-dark'
         li.nav-item.me-2
           = button_to t('navbar.sign_out'), auth_logout_path, method: :delete, class: 'nav-link text-dark'
       - else

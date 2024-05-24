@@ -1,0 +1,21 @@
+.mb-4
+  h2
+    = t('profile.show.my_bulletins')
+  hr
+
+= link_to t('profile.show.add_bulletin'), new_bulletin_path
+
+.row.mt-2
+  table.table.table-borderless
+    thead
+      tr
+        th
+          = t('profile.table.title')
+        th
+          = t('profile.table.state')
+        th
+          = t('profile.table.creation_date')
+        th
+          = t('profile.table.actions')
+    tbody
+      = render partial: 'bulletin', collection: @bulletins

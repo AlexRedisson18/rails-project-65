@@ -3,9 +3,9 @@
 class BulletinPolicy
   attr_reader :user, :bulletin
 
-  def initialize(user, book)
+  def initialize(user, bulletin)
     @user = user
-    @book = book
+    @bulletin = bulletin
   end
   # BEGIN
 
@@ -33,7 +33,19 @@ class BulletinPolicy
     admin? || author?
   end
 
-  def destroy?
+  def archive?
+    admin? || author?
+  end
+
+  def to_moderate?
+    author?
+  end
+
+  def reject?
+    admin?
+  end
+
+  def publish?
     admin?
   end
 

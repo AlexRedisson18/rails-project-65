@@ -2,9 +2,9 @@ tr
   td
     = link_to bulletin.title, bulletin
   td
-    = time_ago_in_words(bulletin.updated_at)
+    = t("bulletins.states.#{bulletin.state}")
   td
     = time_ago_in_words(bulletin.updated_at)
   td
-    = link_to t('admin.admin.table.publish'), bulletin, class: 'me-1'
-    = link_to t('admin.admin.table.to_archive'), '#', data: { turbo_method: :patch, turbo_confirm: t('.admin.admin.confirm_archive') }, class: 'text-danger'
+    = link_to t('bulletins.table.actions.show'), bulletin, class: 'me-1'
+    = link_to t('bulletins.table.actions.archive'), '#', data: { turbo_method: :patch, turbo_confirm: t('bulletins.coinfirm.archive') }, class: 'text-danger'

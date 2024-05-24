@@ -18,6 +18,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
+gem 'aasm'
 gem 'active_storage_validations'
 gem 'faker'
 gem 'file_validators'

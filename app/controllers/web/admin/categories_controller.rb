@@ -29,7 +29,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
       flash[:notice] = t('admin.categories.update.flash.notice')
       redirect_to admin_categories_path
     else
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +38,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
       flash[:notice] = t('admin.categories.destroy.flash.notice')
       redirect_to admin_categories_path
     else
-      render :edit, status: :unprocessable_entity, notice: t('admin.categories.destroy.flash.alert')
+      render :index, status: :unprocessable_entity, notice: t('admin.categories.destroy.flash.alert')
     end
   end
 

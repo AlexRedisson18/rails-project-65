@@ -1,5 +1,7 @@
 h1.h2.mb-4 = t('admin.bulletins.index.bulletins')
 
+== render 'web/profiles/search_form', url: admin_bulletins_url
+
 .row.mt-2
   table.table.table-borderless
     thead
@@ -10,3 +12,6 @@ h1.h2.mb-4 = t('admin.bulletins.index.bulletins')
         th = t('admin.bulletins.index.table.actions')
     tbody
       == render partial: 'bulletin', collection: @bulletins
+
+.row.mt-2
+  == paginate @bulletins

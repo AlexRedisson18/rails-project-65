@@ -4,14 +4,37 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+draft:
   title: Bulletin_title_1
   description: Bulletin fixture description
   category: one
   user: one
+  state: draft
 
-two:
+under_moderation:
   title: Bulletin_title_2
-  description: Bulletin fixture description 2
+  description: Bulletin fixture description
   category: two
-  user: two
+  user: one
+  state: under_moderation
+
+published:
+  title: Bulletin_title_3
+  description: Bulletin fixture description
+  category: two
+  user: one
+  state: published
+
+rejected:
+  title: Bulletin_title_4
+  description: Bulletin fixture description
+  category: one
+  user: one
+  state: rejected
+
+archive:
+  title: Bulletin_title_5
+  description: Bulletin fixture description
+  category: one
+  user: one
+  state: archive

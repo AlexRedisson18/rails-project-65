@@ -7,10 +7,8 @@
 one:
   name: User One
   email: userone@mail.ru
-# column: value
-#
+
 two:
   name: User Admin
   email: useradmin@mail.ru
   admin: true
-# column: value

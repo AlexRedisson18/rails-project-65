@@ -12,6 +12,10 @@ class Bulletin < ApplicationRecord
   validates :description, presence: true, length: { minimum: 5, maximum: 1000 }
   validates :image, presence: true, content_type: %i[png jpg jpeg], size: { less_than: 5.megabytes }
 
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[category_id title state]
+  end
+
   aasm column: :state do
     state :draft, initial: true
     state :under_moderation, :published, :rejected, :archived

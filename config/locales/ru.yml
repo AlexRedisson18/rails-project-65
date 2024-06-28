@@ -14,6 +14,17 @@ ru:
     not_logged_in: Прежде чем продолжить вам необходими войти в систему
     not_admin: У вас нет прав для просмотра данной страницы
   bulletins:
+    aasm_states:
+      draft: Черновик
+      under_moderation: На модерации
+      published: Опубликовано
+      rejected: Возвращено
+      archived: В архиве
+    search_form:
+      search_by_title: Искать по названию объявления
+      select_category: Выбрать категорию
+      search: Искать
+      reset: Сброс
     table:
       actions:
         show: Показать

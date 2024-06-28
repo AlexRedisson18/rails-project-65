@@ -5,6 +5,8 @@
 
 = link_to t('profile.show.add_bulletin'), new_bulletin_path
 
+== render 'search_form', url: profile_url
+
 .row.mt-2
   table.table.table-borderless
     thead
@@ -19,3 +21,6 @@
           = t('profile.table.actions')
     tbody
       = render partial: 'bulletin', collection: @bulletins
+
+.row.mt-2
+  == paginate @bulletins

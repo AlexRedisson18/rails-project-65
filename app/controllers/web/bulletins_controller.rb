@@ -5,7 +5,10 @@ class Web::BulletinsController < Web::ApplicationController
   before_action :find_bulletin, only: %i[edit update to_moderate archive]
 
   def index
-    @bulletins = Bulletin.includes(:category, :user).order(created_at: :desc)
+    @q = Bulletin.published.order(created_at: :desc).ransack(params[:q])
+    @categories = Category.all
+
+    @bulletins = @q.result.page(params[:page]).per(10)
   end
 
   def show

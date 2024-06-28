@@ -2,5 +2,10 @@
   h2 = t('bulletins.index.title')
   hr
 
+  == render 'search_form', url: root_url
+
   .row.mt-2
     == render partial: 'bulletin', collection: @bulletins
+
+  .row.mt-2
+    == paginate @bulletins

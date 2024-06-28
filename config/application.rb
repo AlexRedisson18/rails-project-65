@@ -8,6 +8,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+ENV['RANSACK_FORM_BUILDER'] = '::SimpleForm::FormBuilder'
+
 module RailsProject65
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

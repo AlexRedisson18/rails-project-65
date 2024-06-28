@@ -9,3 +9,6 @@ h1.h2.mb-4 = t('admin.admin.index.bulletins_on_moderation')
         th = t('admin.admin.index.table.actions')
     tbody
       == render partial: 'bulletin', collection: @bulletins
+
+.row.mt-2
+  == paginate @bulletins

@@ -2,7 +2,6 @@ exclude:
 
 - vendor/*
 - node_modules/*
-- app/views/kaminari/*
 
 linters:
   LineLength:

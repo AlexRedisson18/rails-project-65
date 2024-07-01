@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   has_many :bulletins, dependent: :destroy
 
-  validates :name, :email, presence: true, length: { minimum: 2, maximum: 50 }
-  validates :email, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, presence: true,
+                    uniqueness: { case_sensitive: false },
+                    length: { minimum: 2, maximum: 50 },
+                    format: { with: URI::MailTo::EMAIL_REGEXP }
 end

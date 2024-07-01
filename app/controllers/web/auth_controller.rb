@@ -10,7 +10,7 @@ module Web
         sign_in(user)
         flash[:notice] = t('auth.signed_in')
       else
-        puts "==== USER NOT SAVED: #{user.errors}"
+        puts "==== USER NOT SAVED: #{user.errors.full_messages}"
 
         flash[:alert] = t('auth.error')
       end

@@ -141,7 +141,7 @@ ru:
   views:
     pagination:
       first: Первая
-      truncate: Серидина
+      truncate: Середина
       last: Последняя
       next: Следующая
       previous: Предыдущая

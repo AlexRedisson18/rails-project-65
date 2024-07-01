@@ -7,7 +7,6 @@ class BulletinPolicy
     @user = user
     @bulletin = bulletin
   end
-  # BEGIN
 
   def index?
     true
@@ -58,5 +57,4 @@ class BulletinPolicy
   def admin?
     user&.admin?
   end
-  # END
 end

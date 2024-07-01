@@ -138,3 +138,10 @@ ru:
       state: Состояние
       creation_date: Дата создания
       actions: Действия
+  views:
+    pagination:
+      first: Первая
+      truncate: Серидина
+      last: Последняя
+      next: Следующая
+      previous: Предыдущая

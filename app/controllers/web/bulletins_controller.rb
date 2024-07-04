@@ -8,7 +8,7 @@ class Web::BulletinsController < Web::ApplicationController
     @q = Bulletin.published.order(created_at: :desc).ransack(params[:q])
     @categories = Category.all
 
-    @bulletins = @q.result.page(params[:page]).per(10)
+    @bulletins = @q.result.page(params[:page]).per(12)
   end
 
   def show
@@ -20,7 +20,9 @@ class Web::BulletinsController < Web::ApplicationController
     authorize @bulletin
   end
 
-  def edit; end
+  def edit
+    authorize @bulletin
+  end
 
   def create
     authorize Bulletin
@@ -36,6 +38,8 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def update
+    authorize @bulletin
+
     if @bulletin.update(bulletin_params)
       flash[:notice] = t('bulletins.update.flash.success')
       redirect_to bulletins_path
@@ -45,6 +49,8 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def to_moderate
+    authorize @bulletin
+
     if @bulletin.may_to_moderate?
       @bulletin.to_moderate!
       flash[:notice] = t('bulletins.to_moderate.flash.success')
@@ -55,6 +61,8 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   def archive
+    authorize @bulletin
+
     if @bulletin.may_archive?
       @bulletin.archive!
       flash[:notice] = t('bulletins.archive.flash.success')
@@ -68,8 +76,6 @@ class Web::BulletinsController < Web::ApplicationController
 
   def find_bulletin
     @bulletin = current_user.bulletins.find(params[:id])
-
-    authorize @bulletin
   end
 
   def bulletin_params

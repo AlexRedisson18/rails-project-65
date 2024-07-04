@@ -6,10 +6,12 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   def index
     @q = Bulletin.order(created_at: :desc).ransack(params[:q])
 
-    @bulletins = @q.result.page(params[:page]).per(10)
+    @bulletins = @q.result.page(params[:page]).per(12)
   end
 
   def publish
+    authorize @bulletin
+
     if @bulletin.may_publish?
       @bulletin.publish!
       flash[:notice] = t('admin.bulletins.publish.flash.success')
@@ -20,6 +22,8 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   end
 
   def reject
+    authorize @bulletin
+
     if @bulletin.may_reject?
       @bulletin.reject!
       flash[:notice] = t('admin.bulletins.reject.flash.success')
@@ -30,6 +34,8 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   end
 
   def archive
+    authorize @bulletin
+
     if @bulletin.may_archive?
       @bulletin.archive!
       flash[:notice] = t('admin.bulletins.archive.flash.success')
@@ -43,6 +49,5 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
 
   def find_bulletin
     @bulletin = Bulletin.find(params[:id])
-    authorize @bulletin
   end
 end

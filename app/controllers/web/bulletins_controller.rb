@@ -28,7 +28,7 @@ class Web::BulletinsController < Web::ApplicationController
     @bulletin = current_user.bulletins.build(bulletin_params)
 
     if @bulletin.save
-      flash[:notice] = t('bulletins.create.flash.notice')
+      flash[:notice] = t('bulletins.create.flash.success')
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -37,7 +37,7 @@ class Web::BulletinsController < Web::ApplicationController
 
   def update
     if @bulletin.update(bulletin_params)
-      flash[:notice] = t('bulletins.update.flash.notice')
+      flash[:notice] = t('bulletins.update.flash.success')
       redirect_to bulletins_path
     else
       render :new, status: :unprocessable_entity
@@ -47,9 +47,9 @@ class Web::BulletinsController < Web::ApplicationController
   def to_moderate
     if @bulletin.may_to_moderate?
       @bulletin.to_moderate!
-      flash[:notice] = t('bulletins.to_moderate.flash.notice')
+      flash[:notice] = t('bulletins.to_moderate.flash.success')
     else
-      flash[:alert] = t('bulletins.to_moderate.flash.alert')
+      flash[:alert] = t('bulletins.to_moderate.flash.error')
     end
     redirect_to profile_path
   end
@@ -57,9 +57,9 @@ class Web::BulletinsController < Web::ApplicationController
   def archive
     if @bulletin.may_archive?
       @bulletin.archive!
-      flash[:notice] = t('bulletins.archive.flash.notice')
+      flash[:notice] = t('bulletins.archive.flash.success')
     else
-      flash[:alert] = t('bulletins.archive.flash.alert')
+      flash[:alert] = t('bulletins.archive.flash.error')
     end
     redirect_to profile_path
   end

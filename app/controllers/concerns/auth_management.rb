@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module AuthConcern
+module AuthManagement
   def sign_in(user)
     session[:user_id] = user.id
   end
@@ -21,12 +21,12 @@ module AuthConcern
   def authenticate_user!
     return if signed_in?
 
-    redirect_to root_path, alert: t('auth.not_logged_in')
+    redirect_to root_path, alert: t('auth.flash.not_logged_in')
   end
 
   def authenticate_admin!
     return if signed_in? && current_user.admin?
 
-    redirect_to root_path, alert: t('auth.not_admin')
+    redirect_to root_path, alert: t('auth.flash.not_admin')
   end
 end

@@ -17,7 +17,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     @category = Category.build(category_params)
 
     if @category.save
-      flash[:notice] = t('admin.categories.create.flash.notice')
+      flash[:notice] = t('admin.categories.create.flash.success')
       redirect_to admin_categories_path
     else
       render :new, status: :unprocessable_entity
@@ -26,7 +26,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def update
     if @category.update(category_params)
-      flash[:notice] = t('admin.categories.update.flash.notice')
+      flash[:notice] = t('admin.categories.update.flash.success')
       redirect_to admin_categories_path
     else
       render :edit, status: :unprocessable_entity
@@ -35,11 +35,12 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def destroy
     if @category.destroy
-      flash[:notice] = t('admin.categories.destroy.flash.notice')
-      redirect_to admin_categories_path
+      flash[:notice] = t('admin.categories.destroy.flash.success')
     else
-      render :index, status: :unprocessable_entity, notice: t('admin.categories.destroy.flash.alert')
+      error_locale_key = @category.bulletins.count.positive? ? 'has_bulletins' : 'error'
+      flash[:alert] = t("admin.categories.destroy.flash.#{error_locale_key}")
     end
+    redirect_to admin_categories_path
   end
 
   private

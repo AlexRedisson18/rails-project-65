@@ -4,7 +4,7 @@ require 'test_helper'
 
 module Web
   module Admin
-    class AdminControllerTest < ActionDispatch::IntegrationTest
+    class HomeControllerTest < ActionDispatch::IntegrationTest
       setup do
         @user = users(:one)
         @admin = users(:two)

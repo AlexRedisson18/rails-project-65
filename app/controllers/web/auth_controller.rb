@@ -8,9 +8,9 @@ module Web
 
       if user.save
         sign_in(user)
-        flash[:notice] = t('auth.signed_in')
+        flash[:notice] = t('auth.flash.success')
       else
-        flash[:alert] = t('auth.error')
+        flash[:alert] = t('auth.flash.error')
       end
 
       redirect_to root_path
@@ -18,17 +18,17 @@ module Web
 
     def logout
       sign_out
-      redirect_to root_path, notice: t('auth.signed_in')
+      redirect_to root_path, notice: t('auth.flash.success')
     end
 
     private
 
     def find_or_initialize_user(user_data)
-      user_email = user_data['email'].downcase
-      user_name = user_data['name']
+      email = user_data['email'].downcase
+      name = user_data['name']
 
-      user = User.find_or_initialize_by(email: user_email)
-      user.name = user_name
+      user = User.find_or_initialize_by(email:)
+      user.name = name
       user
     end
   end

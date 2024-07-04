@@ -3,6 +3,6 @@
 class ApplicationController < ActionController::Base
   helper_method :signed_in?, :current_user
 
-  include AuthConcern
+  include AuthManagement
   include Pundit::Authorization
 end

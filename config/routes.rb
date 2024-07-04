@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      root 'admin#index'
+      root 'home#index'
 
       resources :categories, except: %i[show]
       resources :bulletins, only: %i[index] do
